@@ -78,6 +78,11 @@ guides(size=guide_legend(title=log10len, order=1)) +
 theme_nothing()
 
 
+print("START: Visualization")
+png("Binning/MaxBin/IMP-MaxBin-vizbin_length_bundance.png", width=plotWidth, height=plotHeight)
+mb.vb.plot
+dev.off()
+
 ## Generate plot with completeness information
 print("Generate plot with completeness information")
 essPal <- colorRampPalette(brewer.pal(11,"Spectral"))(111)[111:1]
@@ -95,11 +100,6 @@ scale_alpha_continuous(range = c(0.5, 1),
 guides(size=guide_legend(title=log10len, order=1)) +
 theme_nothing()
 
-
-print("START: Visualization")
-png("Binning/MaxBin/IMP-MaxBin-vizbin_length_bundance.png", width=plotWidth, height=plotHeight)
-mb.vb.plot
-dev.off()
 
 png("Binning/MaxBin/IMP-MaxBin-vizbin_length_completeness_abundance.png", width=plotWidth, height=plotHeight)
 mb.vb.plot.comp
